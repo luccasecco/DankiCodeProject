@@ -1,0 +1,717 @@
+/* ============ RESET =============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ============ VARIABLES =============================== */
+:root {
+  --header-height: 4.5rem;
+  /* COLORS */
+  --hue: 159;
+  /* HSL color mode */
+  --base-color: hsl(var(--hue) 36% 57%);
+  --base-color-second: hsl(var(--hue) 65% 88%);
+  --base-color-alt: hsl(var(--hue) 57% 53%);
+  --title-color: hsl(var(--hue) 41% 10%);
+  --text-color: hsl(0 0% 46%);
+  --text-color-light: hsl(0 0% 98%);
+  --body-color: hsl(0 0% 98%);
+  /* Font size */
+  --menu-font-size: 0.8rem;
+  --title-font-size: 1.5rem;
+  --subtitle-font-size: 1rem;
+  /* Font family */
+  --title-font: 'Poppins', sans-serif;
+  --body-font: 'DM Sans', sans-serif;
+}
+
+/* ============ BASE =============================== */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2%;
+}
+
+.clear{
+  clear: both;
+}
+
+.float {
+  width: 50%;
+  float: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.w50 {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0;
+}
+
+.w33 {
+  float: left;
+  width: 33.3%;
+}
+
+.w60{
+  width: 60%;
+  float: left;
+}
+
+.w40{
+  width: 40%;
+  float: left;
+}
+
+.w100{
+  width: 100%;
+  float: left;
+}
+
+.title {
+  font: 300 var(--title-font-size) var(--title-font);
+  color: var(--title-color);
+}
+
+/* ============ LAYOUT =============================== */
+#header .container{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* .section {
+  padding: calc(5rem + var(--header-height)) 0;
+} */
+
+section .overlay{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  left: 0;
+  top: 0;
+}
+
+section.main-bg{
+  position: relative;
+  text-align: center;
+  width: 100%;
+  padding: 140px 0 200px 0;
+  background-image: url(../assets/images/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+section.main-bg > .container{
+  position: relative;
+  z-index: 1;
+}
+
+.text{
+  display: inline-block;
+  position: relative;
+  color: #287774;
+}
+
+.line{
+  position: absolute;
+  left: 0;
+  top: -5px;
+  width: 80px;
+  height: 3px;
+  background-color: #287774;
+}
+
+.icons {
+  display: flex;
+  width: 100%;
+  margin-top: 15px
+}
+
+.icon-single {
+  margin: 10px;
+}
+
+.icon-single h2{
+  color: #847c79;
+  margin-bottom: 15px;
+}
+
+.icon-single p {
+  color: #646464;
+  font-weight: lighter;
+  font-size: 16px;
+}
+
+.team{
+  width: 50%;
+}
+
+.team-about{
+  width: 50%;
+}
+
+.team-about p{
+  color: black;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.img-avatar{
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-top: 20px;
+  background-size: 100% 100%;
+  vertical-align: middle;
+}
+
+.description-avatar{
+  width: calc(100% -70px);
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+  color: black;
+}
+
+.description-avatar	h3{
+  font-style: italic;
+  font-weight: normal;
+}
+
+.description-avatar	p{
+  font-weight: lighter;
+  font-size: 14px;
+}
+
+.icon-enter {
+  margin-right: 20px;
+}
+
+input[type="text"] {
+  width: calc(100% - 120px);
+  height: 40px;
+  background: white;
+  border: 1px solid #ccc;
+  display: inline-block;
+  font-size: 20px;
+}
+
+input[type="submit"] {
+  width: 120px;
+  height: 40px;
+  background:#1d6c64;
+  cursor: pointer;
+  display: inline-block;
+  color: #fff;
+  font-weight: normal;
+  font-size: 20px;
+}
+
+.card-single {
+  width: 33.3%;
+  float: left;
+  padding: 50px;
+}
+
+.card-single img{
+  width: 100%;
+}
+
+.footer1 {
+  padding: 20px 0;
+  background-color: #52aaa7;
+  color: #fff;
+}
+
+.footer2 {
+  padding: 15px 0;
+  background-color: #237a70;
+  text-align: center;
+  color: #fff;
+}
+
+/* ============ LOGO =============================== */
+.logo {
+  font: normal 1.8rem var(--title-font);
+  color: var(--title-color)
+}
+
+/* ============ NAVIGATION =============================== */
+nav.menu-mobile{
+  display: none;
+  cursor: pointer;
+}
+
+nav.menu-mobile ul{
+  display: none;
+  width: 100%;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  top: 64px;
+  z-index: 999;
+  text-align: center;
+  border-top: 1px solid black;
+}
+
+nav.menu-mobile ul li .selected {
+  background-color: rgb(224, 224, 224);
+}
+
+nav.menu-mobile ul li{
+  padding: 3px 0;
+  border-bottom: 1px solid black;
+}
+
+nav.menu-mobile ul li a{
+  display: block;
+}
+
+nav.menu-desktop ul{
+  align-items: center;
+  display: flex;
+  justify-content: space-between; 
+}
+
+nav.menu-desktop ul li{
+  padding: 1.8rem;
+}
+
+nav.menu-desktop ul li a:hover{
+  transition: 0.2s;
+  color: aqua;
+  text-decoration: underline;
+}
+
+nav.menu-desktop ul li .selected {
+  font-weight: normal;
+  text-decoration: underline;
+}
+
+/* ============ HOME =============================== */
+#home {
+  margin: 0;
+}
+
+#home h2 {
+  color: #62e0dc;
+  margin-bottom: 2rem;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#home p {
+  margin-top: 20px;
+  color: #fff;
+  font-size: 17px;
+}
+
+/* ============ DIFERENCIALS =============================== */
+#diferencials {
+  padding: 30px 0;
+  text-align: center;
+}
+
+#diferencials h2{
+  font-size: 27px;
+  font-weight: normal;
+}
+
+/* ============ ABOUT =============================== */
+#about {
+  background-color: rgb(238, 232, 232);
+}
+
+/* ============ INSCRIPTION =============================== */
+#inscription {
+  background-color: #52aaa7;
+  padding: 30px 0;
+}
+
+#inscription h2 {
+  color: #fff;
+  font-size: 33px;
+  font-weight: normal;
+}
+
+/* ============ CARDS =============================== */
+#cards {
+  padding: 30px 0;
+}
+
+#cards h3 {
+  font-weight: normal;
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+#cards p{
+  font-weight: lighter;
+  font-size: 16px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #ccc;
+  margin: 10px 0;
+}
+
+/* ============ FOOTER =============================== */
+#footer h2{
+  font-weight: normal;
+  font-size: 23px;
+  margin-bottom: 15px;
+}
+
+#footer p{
+  margin-top: 8px;
+  font-weight: lighter;
+}
+
+#footer a {
+  margin-top: 15px;
+  display: block;
+  color: #fff;
+}
+
+/* ============ PAGE ABOUT =============================== */
+.title-page {
+  padding: 30px;
+  width: 100%;
+  min-height: 150px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+section.title-page h2{
+  color: #44D4C5;
+  font-size: 27px;
+  font-weight: normal;
+  margin-bottom: 15px;
+}
+
+section.title-page p{
+  color: white;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+section.title-page > .container {
+  position: relative;
+  z-index: 101;
+}
+section.overlay__title-page {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.4)
+}
+
+/* ============ ABOUT CONTENT =============================== */
+section.about__content {
+  padding: 30px 0;
+}
+
+.about__single_content img{
+  max-width: 100%;
+  float: left;
+  width: 50%;
+  margin-bottom: 10px;
+}
+
+.about__single_content p{
+  float: left;
+  width: 50%;
+  padding: 5px 30px;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: justify;
+  margin-bottom: 10px;
+}
+
+
+
+/* ======== PARALAX ABOUT CONTENT =========================== */
+section.paralax {
+  padding: 30px 0;
+  width: 100%;
+  min-height: 200px;
+  background-image: url('../assets/images/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  text-align: center;
+}
+
+section.paralax p{
+  color: white;
+  margin-top: 10px;
+}
+
+section.paralax h2.call-paralax{
+  border: 1px solid #44D4C5;
+  padding: 5px 25px;
+  color: #44D4C5;
+  display: inline-block;
+  font-size: 20px;
+}
+
+/* ============ ///////// =============================== */
+section.team__about{
+  padding: 40px 0;
+}
+
+.team-circles{
+  margin-top: 50px;
+  display: flex;
+  flex: wrap;
+}
+
+.single-circle{
+  padding: 0 20px;
+  text-align: center;
+  width: 33.3%;
+}
+
+.avatar-single{
+  position: relative;
+  width: 40%;
+  padding-top: 40%;
+  margin: 0 auto;
+}
+
+.avatar-single-container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #ccc;
+  background-size: 100% 100%;
+}
+
+.single-circle h3{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 20px;
+}
+
+/* ============ PICTURE ABOUT =============================== */
+section.picture__about{
+  background-color: rgb(235,235,235);
+  border-top: 2px solid rgb(210,210,210);
+  padding: 20px 0;
+}
+
+.card-text{
+  margin-top: 10px;
+  width: 80%;
+  position: relative;
+}
+
+.card-text img{
+  max-width: 100%;
+}
+
+.card-text h3{
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  color: white;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+section.picture__about p{
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+/* ============ CONTACT =============================== */
+section.contact{
+  padding: 30px 0;
+}
+
+section.contact .float,
+section.contact .w100{
+  padding: 0 10px;
+}
+
+form{
+  margin-top: 10px;
+}
+
+.form h2{
+  background-color: #DDDDDD;
+  text-align: center;
+  color: #ACAC9D;
+  font-size: 17px;
+  font-weight: normal;
+  border-left: 5px solid #ccc;
+  padding: 4px 0;
+}
+
+.form input[type="text"], .form input[type="email"] {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  padding-left: 8px;
+  font-size: 15px;
+}
+
+.form textarea {
+  width: 100%;
+  height: 120px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  padding: 10px;
+  resize: vertical;
+}
+
+.tags-form{
+  padding-left: 50px;
+}
+.tags-form i{
+  margin-right: 15px;
+}
+
+.tags-form h2{
+  font-weight: normal;
+}
+
+.tags-form p{
+  font-weight: lighter;
+  margin-bottom: 10px;
+}
+
+.tags-form p.tag-contact{
+  color: white;
+  background-color: #249B8F;
+  text-align: center;
+  margin-top: 6px;
+  padding: 8px 4px;
+}
+/* ============ MEDIA QUERIES =============================== */
+@media screen and (min-width: 1680px) {
+  section.contact{
+    min-height: 530px;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .icons{
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .w40,.w60,.w100{
+    width: 100%;
+  }
+  .w50{
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .w33{
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .team{
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  .team-about{
+    width: 100%;
+  }
+
+  .float{
+    width: 100%;
+  }
+
+  .card-single{
+    width: 100%;
+  }
+
+  .about__single_content img{
+   width: 100%;
+    
+  }
+  
+  .about__single_content p{
+    width: 100%
+  }
+
+  .team-circles{
+    flex-direction: column;
+  }
+
+  .single-circle{
+    width: 100%;
+    padding: 0px 8px;
+    margin-bottom: 30px;
+  }
+
+  .avatar-single{
+    width: 35%;
+    padding-top: 35%;
+  }
+
+  .card-text{
+    width: 100%;
+  }
+  
+  .tags-form{
+    padding-left: 0;
+  }
+
+  section.contact{
+    min-height: 0;
+  }
+
+}
+
+@media screen and (max-width: 500px){
+  nav.menu-desktop {
+    display: none;
+  }
+
+  nav.menu-mobile{
+    display: block;
+  }
+
+  .card-single {
+    padding: 10px;
+  }
+
+
+  
+}
